@@ -15,7 +15,7 @@ public class LoteriaService {
         this.loteriaRepository = loteriaRepository;
     }
 
-    @RabbitListener(queues = "fila-loteria")
+    @RabbitListener(queues = "fila-ecommerce")
     public void subscribe(Loteria loteria) {
         Loteria novaLoteria = new Loteria(loteria.getNome());
         loteriaRepository.save(novaLoteria);
